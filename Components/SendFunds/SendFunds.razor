@@ -1,0 +1,41 @@
+@page "/SendFunds"
+
+<head>
+    <link href="~/Components/SendFunds.css" rel="stylesheet" />
+</head>
+
+<div id="SendFunds">
+    <div class="lg:flex p-2">
+        <!-- Form Section (Takes Half on Desktop) -->
+        <div class="w-full">
+            <form id="stellarTransactionForm">
+                <div class="mb-4">
+                    <label for="senderAddress">Sender Address:</label>
+                    <input type="text" id="senderAddress" name="senderAddress">
+                </div>
+                <div class="mb-4">
+                    <label for="secretKey">Secret Key:</label>
+                    <input type="text" id="secretKey" name="secretKey">
+                </div>
+                <div class="mb-4">
+                    <label for="receiverAddress">Receiver Address:</label>
+                    <input type="text" id="receiverAddress" name="receiverAddress">
+                </div>
+                <div class="mb-4">
+                    <label for="amount">Amount:</label>
+                    <input type="text" id="amount" name="amount">
+                </div>
+                <div class="mb-4">
+                    <label for="memo">Memo:</label>
+                    <input type="text" id="memo" name="memo">
+                </div>
+                <button type="submit">Send Transaction</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script src="~/Components/SendFunds.js"></script>
+<script src="~/Scripts/HorizonServer.js"></script>
+}
