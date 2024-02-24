@@ -18,6 +18,8 @@
     <PackageTags>Blockchain, Stellar, MultiSig, Components, Razor, Javascript, Html, Finance</PackageTags>
     <PackageProjectUrl>https://stellar.org/</PackageProjectUrl>
     <PackageId>Pre-release-Pakana-Stellar-Razor-Components</PackageId>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,6 +40,17 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
