@@ -1,5 +1,4 @@
 ﻿<script language="javascript">
-
     var statusArea;
     var keyPair = null;
 
@@ -8,14 +7,14 @@
 
     // Define the loadAccountData function
     async function loadAccountData(accountId) {
-            try {
-                const account = await horizonServer.loadAccount(accountId);
+        try {
+            const account = await horizonServer.loadAccount(accountId);
     return account;
-            } catch (error) {
+        } catch (error) {
         console.error('Error loading account data:', error);
     throw error;
-            }
         }
+    }
 
     // Function to load account data with delay
     async function loadAccountWithDelay(accountId, maxAttempts = 10, interval = 1000) {
@@ -33,22 +32,22 @@
 
     // Exit the loop if successful
     if (account) {
-                        break;
-                    }
-                } catch (loadError) {
-        console.warn('Error loading account data (attempt ' + (attempts + 1) + '):', loadError);
+                    break;
                 }
+            } catch (loadError) {
+        console.warn('Error loading account data (attempt ' + (attempts + 1) + '):', loadError);
             }
+        }
 
     return account;
-        }
+    }
 
     async function establishTrustline(secretKey, publicKey) {
         console.log('Attempting to establish trustline for public key:', publicKey);
 
     // Check if the wallet address is generated
     if (publicKey) {
-                try {
+            try {
         // Fund the wallet with Friendbot if not funded already
         await fundWithFriendbot(publicKey);
 
@@ -58,12 +57,12 @@
     // Log the loaded account data
     console.log('Loaded account data:', account);
 
-                    // Ensure that the account has a balance
-                    if (account.balances && account.balances.length > 0) {
-                        // Trustline operation
-                        const trustlineOperation = StellarSdk.Operation.changeTrust({
+                // Ensure that the account has a balance
+                if (account.balances && account.balances.length > 0) {
+                    // Trustline operation
+                    const trustlineOperation = StellarSdk.Operation.changeTrust({
         asset: new StellarSdk.Asset(assetCode, distributionWalletPk),
-                        });
+                    });
 
     // Get the current sequence from the loaded account
     const sequence = account.sequence;
@@ -72,7 +71,7 @@
     const transaction = new StellarSdk.TransactionBuilder(account, {
         fee: StellarSdk.BASE_FEE,
     networkPassphrase: StellarSdk.Networks.TESTNET,
-    sequence: sequence // Ensure sequence is used correctly
+    sequence: sequence, // Ensure sequence is used correctly
                         })
     .addOperation(trustlineOperation)
     .setTimeout(0)
@@ -87,17 +86,16 @@
     console.log('Trustline established successfully:', result);
 
     try {
-                            if (null != hostTargetElement) {
+                        if (null != hostTargetElement) {
         hostTargetElement.style.display = "block";
-                            }
-                        } catch (error) {
-        console.error('hostTargetElement not defined ', error);
                         }
-
-                    } else {
-        console.error('Account does not have a balance. Unable to establish trustline.');
+                    } catch (error) {
+        console.error('hostTargetElement not defined ', error);
                     }
-                } catch (error) {
+                } else {
+        console.error('Account does not have a balance. Unable to establish trustline.');
+                }
+            } catch (error) {
         console.error('Error establishing trustline:', error);
 
     if (error.response && error.response.data) {
@@ -105,27 +103,27 @@
 
     if (error.response.data.extras) {
         console.log('Trustline extras:', error.response.data.extras);
-                        }
                     }
                 }
-            } else {
+            }
+        } else {
         // Prompt the user to sign to establish the trustline
         // You can implement the logic for user interaction or use a modal/popup
         console.log('User needs to sign to establish trustline');
-                // Add your code for user interaction here
-            }
+            // Add your code for user interaction here
         }
+    }
 
     // Event listener for the Generate Wallet Button
     document.getElementById('generateWalletBtn').addEventListener('click', async function () {
-            // disable the hosting form's submit button if defined
-            try {
-                if (null != hostTargetElement) {
+        // disable the hosting form's submit button if defined
+        try {
+            if (null != hostTargetElement) {
         hostTargetElement.style.display = "none";
-                }
-                } catch (error) {
+            }
+        } catch (error) {
         console.error('hostTargetElement not defined ', error);
-                }
+        }
 
     // Use the Stellar SDK to generate a new key pair
     keyPair = await generateKeypair();
@@ -140,11 +138,7 @@
     // Check if the wallet address is generated and establish trustline accordingly
     if (keyPair) {
         await establishTrustline(keyPair.secret, keyPair.publicKey);
-            }
-
-                
-        });
-
-        
+        }
     });
+});
 </script>
