@@ -16,7 +16,7 @@
     <PackageIcon>pkcomponents.png</PackageIcon>
     <PackageReleaseNotes>Powered by Stellar Blockchains Latest Protocol 20 Release Supporting Smart Contracts and Blockchain Transactions. Learn more at https://stellar.org/</PackageReleaseNotes>
     <PackageTags>Blockchain, Stellar, MultiSig, Components, Razor, Javascript, Html, Finance</PackageTags>
-    <PackageProjectUrl>https://stellar.org/</PackageProjectUrl>
+    <PackageProjectUrl>https://www.pakana.net/</PackageProjectUrl>
     <PackageId>Pre-release-Pakana-Stellar-Razor-Components</PackageId>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
