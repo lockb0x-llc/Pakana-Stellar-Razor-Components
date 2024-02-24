@@ -1,10 +1,10 @@
 # Pakana Stellar Razor Components
 [version 1.0.0]
-[Pakana](https://www.pakana.net) is a blockchain development company that specializes in building Financial Technology solutions for the Stellar blockchain.
+[Pakana](https://www.pakana.net) is a blockchain development company that specializes in building financial technology solutions using the Stellar blockchain.
 
 ## Description
 
-The Pakana Stellar Razor Components provide a set of powerful and customizable Razor Components for integrating Stellar blockchain functionality seamlessly into your web applications. These components simplify the integration process, offering a user-friendly interface for Stellar transactions and multisignature operations.
+The Pakana-Stellar-Razor-Components provide a set of powerful and customizable Razor components for integrating Stellar blockchain functionality seamlessly into your web applications. These components simplify the integration process, offering a user-friendly interface for Stellar transactions and multisignature operations.
 
 ## Features
 
@@ -20,15 +20,15 @@ The Pakana Stellar Razor Components provide a set of powerful and customizable R
 
 ## Installation
 
-- Add the Pakana Stellar Razor Components to your project.
-- Download and Install the Stellar Sdk or Use the CDNJS to quickly get started.
+- Add the Pakana-Stellar-Razor-Components to your project.
+- Download and Install the Stellar SDK or use the CDNJS to quickly get started.
 - Configure the Stellar SDK with your network passphrase and other relevant details.
 - Configure the Variables in the HorizonServer.js file to match your projects wallets and network details.
 - Customize the components to fit your application requirements.
 
 <strong>Integration:</strong>
 
-- Embed the Send Funds and Generate Key Pairs components into your Razor views.
+- Embed the Send-Funds and Generate-Key-Pairs components into your Razor views.
 - Customize component behavior based on your application requirements.
 
 ## Prerequisites
@@ -43,7 +43,7 @@ Ensure that your project includes the necessary dependencies:
 
 ## Usage
 
-Example for how to use Pakana Stellar Razor Components in your project.
+Example for how to use Pakana-Stellar-Razor-Components in your project.
 
 ```csharp
 <!-- Razor View Using Pakana Stellar Razor Components -->

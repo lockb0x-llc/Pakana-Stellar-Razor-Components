@@ -2,24 +2,21 @@
 
     document.addEventListener("DOMContentLoaded", async function () {
 
-        function loadScriptIfNeeded(scriptUrl) {
-            if (!document.querySelector(`script[src="${scriptUrl}"]`)) {
-                var script = document.createElement('script');
-                script.src = scriptUrl;
-                document.head.appendChild(script);
-            }
+      try {
+        horizonServer = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org');
+        console.log("Stellar SDK Server instance created:", horizonServer);
+        } catch (e) {
+        console.error("Error creating StellarSdk.Server instance:", e);
+        return;
         }
-
-        loadScriptIfNeeded("/js/stellar-functions.js");
-
     document.getElementById("stellarTransactionForm").addEventListener("submit", function (e) {
         e.preventDefault();
 
     // Set the TimeBounds for the transaction
     const timeBounds = {
-        minTime: Math.floor(Date.now() / 1000) - 60, // Set minTime to now - 60 seconds (adjust as needed)
+    minTime: Math.floor(Date.now() / 1000) - 60, // Set minTime to now - 60 seconds (adjust as needed)
     maxTime: Math.floor(Date.now() / 1000) + 120, // Set maxTime to now + 120 seconds (adjust as needed)
-            };
+    };
 
     const feeStroops = "100"; // Specify the fee in stroops as a string
     const senderAddress = document.getElementById("senderAddress").value;
@@ -32,18 +29,18 @@
     // Load the sender account
     horizonServer.loadAccount(senderAddress)
     .then(function (account) {
-                    // Build the transaction with TimeBounds
-                    const transaction = new horizonServer.TransactionBuilder(account, {
-        fee: feeStroops,
-    networkPassphrase: StellarSDK.Networks.TESTNET,
-    timebounds: timeBounds, // Set the TimeBounds
-                    })
+        // Build the transaction with TimeBounds
+        const transaction = new horizonServer.TransactionBuilder(account, {
+            fee: feeStroops,
+            networkPassphrase: StellarSDK.Networks.TESTNET,
+            timebounds: timeBounds, // Set the TimeBounds
+        })
     .addOperation(
-    horizonServer.Operation.payment({
+        horizonServer.Operation.payment({
         destination: receiverAddress,
-    asset: horizonServer.Asset.native(),
-    amount: amount,
-                            })
+        asset: horizonServer.Asset.native(),
+        amount: amount,
+        })
     )
     .addMemo(horizonServer.Memo.text(memo))
     .build();

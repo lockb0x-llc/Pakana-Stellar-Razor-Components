@@ -3,11 +3,23 @@
     let horizonServer;
 
     document.addEventListener("DOMContentLoaded", async function () {
+        try {
+        horizonServer = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org');
+    console.log("Stellar SDK Server instance created:", horizonServer);
+        } catch (e) {
+        console.error("Error creating StellarSdk.Server instance:", e);
+    return;
+        }
+    $("#agentAddsSignersButton").click(async function (event) {
+        event.preventDefault();
+    // Call the function for adding signers
+    agentAddsSigners();
+        });
 
-        $("#createFundAndOperateButton").on("click", function (e) {
-            e.preventDefault();
-            console.log('Create Button clicked');
-            createFundAndOperateMultiSigWallet();
+    $("#createFundAndOperateButton").on("click", function (e) {
+        e.preventDefault();
+    console.log('Create Button clicked');
+    createFundAndOperateMultiSigWallet();
         });
 
     async function createFundAndOperateMultiSigWallet() {
