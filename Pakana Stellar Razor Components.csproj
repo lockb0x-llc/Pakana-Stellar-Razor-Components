@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/lockb0x-llc/Pakana-Stellar-Razor-Components</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageIcon>pkcomponents.png</PackageIcon>
-    <PackageReleaseNotes>Powered by [Stellar Blockhains](https://stellar.org/) Latest Protocol 20 Release Supporting Smart Contracts and Blockchain Transactions. </PackageReleaseNotes>
+    <PackageReleaseNotes>Powered by Stellar Blockchains Latest Protocol 20 Release Supporting Smart Contracts and Blockchain Transactions. Learn more at https://stellar.org/</PackageReleaseNotes>
     <PackageTags>Blockchain, Stellar, MultiSig, Components, Razor, Javascript, Html, Finance</PackageTags>
     <PackageProjectUrl>https://stellar.org/</PackageProjectUrl>
     <PackageId>Pre-release-Pakana-Stellar-Razor-Components</PackageId>
