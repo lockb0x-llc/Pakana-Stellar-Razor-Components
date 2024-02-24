@@ -1,4 +1,5 @@
-﻿document.addEventListener("DOMContentLoaded", async function () {
+﻿<script>
+document.addEventListener("DOMContentLoaded", async function () {
     if (typeof StellarSdk === 'undefined') {
         console.error("Stellar SDK is not loaded");
         return;
@@ -86,3 +87,4 @@
     window.fetchAccount = fetchAccount;
     window.fetchRecentPayments = fetchRecentPayments;
 });
+</script>

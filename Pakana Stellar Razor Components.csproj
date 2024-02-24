@@ -17,7 +17,7 @@
     <PackageReleaseNotes>Powered by [Stellar Blockhains](https://stellar.org/) Latest Protocol 20 Release Supporting Smart Contracts and Blockchain Transactions. </PackageReleaseNotes>
     <PackageTags>Blockchain, Stellar, MultiSig, Components, Razor, Javascript, Html, Finance</PackageTags>
     <PackageProjectUrl>https://stellar.org/</PackageProjectUrl>
-    <PackageId>Pre-release $(AssemblyName)</PackageId>
+    <PackageId>Pre-release-Pakana-Stellar-Razor-Components</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
