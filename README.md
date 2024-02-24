@@ -1,12 +1,12 @@
 # Pakana Stellar Razor Components
-[version 1.0.0]
+
 [Pakana](https://www.pakana.net) is a blockchain development company that specializes in building financial technology solutions using the Stellar blockchain.
 
-## Description
+## Description:
 
 The Pakana-Stellar-Razor-Components provide a set of powerful and customizable Razor components for integrating Stellar blockchain functionality seamlessly into your web applications. These components simplify the integration process, offering a user-friendly interface for Stellar transactions and multisignature operations.
 
-## Features
+## Features:
 
 - Creating a new Stellar account.
 - Funding a Stellar account from an existing account.
@@ -18,7 +18,7 @@ The Pakana-Stellar-Razor-Components provide a set of powerful and customizable R
 - Implement event handlers for transaction submission and signature collection.
 - Seamlessly integrate Stellar transactions into your application workflow.
 
-## Installation
+## Installation:
 
 - Add the Pakana-Stellar-Razor-Components to your project.
 - Download and Install the Stellar SDK or use the CDNJS to quickly get started.
@@ -43,37 +43,35 @@ Ensure that your project includes the necessary dependencies:
 
 ## Usage
 
-Example for how to use Pakana-Stellar-Razor-Components in your project.
+Here is an example of how to use Pakana Stellar Razor Components in your project.
 
 ```csharp
 <!-- Razor View Using Pakana Stellar Razor Components -->
-<PakanaSendFunds @ref="sendFundsComponent" />
+<PakanaSendFunds @ref="sendFundsComponent"/>
 
 <button @onclick="SubmitTransaction">Submit Transaction</button>
 
-@code {
-    private async Task SubmitTransaction()
-    {
+@code { private async Task SubmitTransaction() {
         await sendFundsComponent.SubmitTransaction();
     }
 }
 ```
 
-## Contributing
+## Contributing:
 
 Interested in contributing or have ideas on expanding this resource?
 
 We'd love to have your help! 
 
 Submit a pull request or open an issue to get started.
-OR
+Or
 Contact us at the [Pakana.net](https://www.Pakana.net) for more information.
 
-## License
+## License:
 
 This project is licensed under the MIT License. 
 
-## Project Structure
+## Project Structure:
 
 - **wwwroot/**
 - **Components/**
