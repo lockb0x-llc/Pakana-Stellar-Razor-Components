@@ -1,6 +1,6 @@
 # Pakana Stellar Razor Components
 
-[Pakana](https://www.pakana.net) is a blockchain development company that specializes in building financial technology solutions using the Stellar blockchain.
+[Pakana](https://www.pakana.net) Lockb0x LLC is a blockchain development company that specializes in building financial technology solutions using the Stellar blockchain. Pakana is our flagship pproduct and primary platfrom that all of our DeFi use-cass are built on.
 
 ## Description:
 
