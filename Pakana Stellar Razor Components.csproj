@@ -1,56 +1,41 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Pakana_Stellar_Razor_Components</RootNamespace>
-    <ApplicationIcon>pkcomponents.ico</ApplicationIcon>
-    <Title>Pakana Stellar Razor Components</Title>
-    <Company>Lockb0X LLC</Company>
-    <Authors>Joshua Kassabian, Steven Tomlinson</Authors>
-    <Description>The Pakana Stellar Razor Components provide a set of powerful and customizable Razor Components for integrating Stellar blockchain functionality seamlessly into your web applications. These components simplify the integration process, offering a user-friendly interface for Stellar transactions and multisignature operations.</Description>
-    <Copyright>MIT</Copyright>
-    <RepositoryUrl>https://github.com/lockb0x-llc/Pakana-Stellar-Razor-Components</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageIcon>pkcomponents.png</PackageIcon>
-    <PackageReleaseNotes>Powered by Stellar Blockchains Latest Protocol 20 Release Supporting Smart Contracts and Blockchain Transactions. Learn more at https://stellar.org/</PackageReleaseNotes>
-    <PackageTags>Blockchain, Stellar, MultiSig, Components, Razor, Javascript, Html, Finance</PackageTags>
-    <PackageProjectUrl>https://www.pakana.net/</PackageProjectUrl>
-    <PackageId>Pre-release-Pakana-Stellar-Razor-Components</PackageId>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="pkcomponents.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\..\OneDrive\Desktop\pkcomponents.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>Pakana_Stellar_Razor_Components</RootNamespace>
+		<ApplicationIcon>pkcomponents.ico</ApplicationIcon>
+		<Title>Pakana Stellar Razor Components</Title>
+		<Company>Lockb0X LLC</Company>
+		<Authors>Joshua Kassabian, Steven Tomlinson</Authors>
+		<Description>The Pakana Stellar Razor Components provide a set of powerful and customizable Razor Components for integrating Stellar blockchain functionality seamlessly into your web applications. These components simplify the integration process, offering a user-friendly interface for Stellar transactions and multisignature operations.</Description>
+		<Copyright>MIT</Copyright>
+		<RepositoryUrl>https://github.com/lockb0x-llc/Pakana-Stellar-Razor-Components</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageIcon>pkcomponents.png</PackageIcon>
+		<PackageReleaseNotes>Powered by Stellar Blockchains Latest Protocol 20 Release Supporting Smart Contracts and Blockchain Transactions. Learn more at https://stellar.org/</PackageReleaseNotes>
+		<PackageTags>Blockchain, Stellar, MultiSig, Components, DotNet, Razor, Javascript, Html, Finance, Payments</PackageTags>
+		<PackageProjectUrl>https://www.pakana.net/</PackageProjectUrl>
+		<PackageId>Pre-release-Pakana-Stellar-Razor-Components</PackageId>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
 
 
-  <ItemGroup>
-    <SupportedPlatform Include="browser" />
-  </ItemGroup>
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.2" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.2" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Update="README.md">
+			<Pack>True</Pack>
+			<PackagePath>content\</PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>
