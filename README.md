@@ -1,16 +1,5 @@
 # Pakana Stellar Razor Components
 
-Lockb0x LLC is a blockchain development company that specializes in building financial technology solutions using the Stellar blockchain. 
-
-[Pakana](https://www.pakana.net) is our flagship product and the primary platform that all of our DeFi use-cases are built on, offering:
-
--Payment Processing
--Contract and Document Management
--Fiat Bank Account Integration
--Quickbooks Integration
-
-... and more, using the Stellar Development Foundation blockchain, Microsoft Azure, and other services.
-
 ## Description:
 
 The goal of the Pakana-Stellar-Razor-Components project is to provide a set of powerful and customizable ASP.NET Razor components for integrating Stellar blockchain functionality seamlessly into your web applications. 
@@ -109,3 +98,15 @@ This project is licensed under the MIT License.
   - HorizonServer.js
   - jQuery.js
   - [README.md](./Scripts/README.md)
+ 
+Lockb0x LLC is a blockchain development company that specializes in building financial technology solutions using the Stellar blockchain. 
+
+[Pakana](https://www.pakana.net) is our flagship product and the primary platform that all of our DeFi use-cases are built on, offering:
+
+-Payment Processing
+-Contract and Document Management
+-Fiat Bank Account Integration
+-Quickbooks Integration
+
+... and more, using the Stellar Development Foundation blockchain, Microsoft Azure, and other services.
+
