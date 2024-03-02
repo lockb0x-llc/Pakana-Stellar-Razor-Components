@@ -2,17 +2,19 @@
 
 Lockb0x LLC is a blockchain development company that specializes in building financial technology solutions using the Stellar blockchain. 
 
-[Pakana](https://www.pakana.net) is our flagship product and the primary platform that all of our DeFi use-cases are built on, offering;
+[Pakana](https://www.pakana.net) is our flagship product and the primary platform that all of our DeFi use-cases are built on, offering:
 
 -Payment Processing
 -Contract and Document Management
 -Fiat Bank Account Integration
 -Quickbooks Integration
+
 ... and more, using the Stellar Development Foundation blockchain, Microsoft Azure, and other services.
 
 ## Description:
 
-The Pakana-Stellar-Razor-Components provide a set of powerful and customizable Razor components for integrating Stellar blockchain functionality seamlessly into your web applications. These components simplify the integration process, offering a user-friendly interface for Stellar transactions and multisignature operations.
+The goal of the Pakana-Stellar-Razor-Components project is to provide a set of powerful and customizable ASP.NET Razor components for integrating Stellar blockchain functionality seamlessly into your web applications. 
+These components aim to simplify the integration process, offering a user-friendly interface for Stellar account creation, multisignature operations, and payments.
 
 ## Features:
 
@@ -34,7 +36,7 @@ The Pakana-Stellar-Razor-Components provide a set of powerful and customizable R
 - Configure the Variables in the HorizonServer.js file to match your projects wallets and network details.
 - Customize the components to fit your application requirements.
 
-<strong>Integration:</strong>
+## Integration:
 
 - Embed the Send-Funds and Generate-Key-Pairs components into your Razor views.
 - Customize component behavior based on your application requirements.
@@ -49,7 +51,7 @@ Ensure that your project includes the necessary dependencies:
     - [JavaScript]
     - [Razor Pages]
 
-## Usage
+## Usage:
 
 Here is an example of how to use Pakana Stellar Razor Components in your project.
 
