@@ -5,6 +5,11 @@
 The goal of the Pakana-Stellar-Razor-Components project is to provide a set of powerful and customizable ASP.NET Razor components for integrating Stellar blockchain functionality seamlessly into your web applications. 
 These components aim to simplify the integration process, offering a user-friendly interface for Stellar account creation, multisignature operations, and payments.
 
+We invite you to fork and use this source-code in your own ASP.NET Razor projects. If you make improvements, please submit them via pull-request. 
+
+Thanks!
+Pakana Team
+
 ## Features:
 
 - Creating a new Stellar account.
