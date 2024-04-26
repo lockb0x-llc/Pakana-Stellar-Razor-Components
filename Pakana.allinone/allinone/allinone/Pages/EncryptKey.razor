@@ -1,0 +1,36 @@
+﻿@page "/Key"
+@rendermode InteractiveAuto
+@inject IJSRuntime JSRuntime
+
+<h1>Secret Key Encryption</h1>
+ <form id="encryptionForm">
+ <label for="secretKeyon">Secret Key:</label>
+ <input type="text" id="secretKeyon" required><br><br>
+    <label for="salton">Encryption Salt:</label>
+ <input type="text" id="salton" required><br><br>
+ <button type="submit">Encrypt Secret Key</button>
+ </form>
+ <div id="encryptedSecretKey"></div>
+ <button id="copyButton" style="display: none;">Copy Encrypted Secret
+Key</button>
+
+@code {
+    private string secretData;
+    private string encryptedSecretKey;
+    private string salton;
+    private string result;
+    private bool showCopyButton = false;
+
+    private async Task HandleEncryption()
+    {
+        result = await JSRuntime.InvokeAsync<string>("encryptKey", secretData, salton);
+        encryptedSecretKey = result;  // Store encrypted result for possible decryption
+        showCopyButton = true;
+        StateHasChanged();
+    }
+
+}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.8/sjcl.js"></script>
+<script src="./_content/pakana.stellar.components/js/encryptKey.js"></script>

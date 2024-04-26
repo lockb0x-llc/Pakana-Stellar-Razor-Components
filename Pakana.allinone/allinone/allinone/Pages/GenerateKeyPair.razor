@@ -1,0 +1,19 @@
+﻿@page "/GenerateKeyPair"
+@rendermode InteractiveAuto
+
+<h1>Stellar Key Pair Generator</h1>
+<button onclick="generateKeyPair()">Generate Key Pair</button>
+<div id="keyPairDisplay" style="margin-top: 20px;">
+    <!-- Key pair will be displayed here -->
+</div>
+
+
+@code{
+    string publicKey { set; get; } = "";
+    string secretKey { set; get; } = "";
+
+  
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.min.js"></script>
+<script src="./_content/pakana.stellar.components/js/generateKeyPair.js"></script>

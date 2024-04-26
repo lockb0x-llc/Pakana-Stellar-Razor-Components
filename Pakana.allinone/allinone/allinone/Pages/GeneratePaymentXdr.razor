@@ -1,0 +1,28 @@
+﻿@page "/EnvelopeGenerator"
+@rendermode InteractiveAuto
+   
+    <h1>Stellar XDR Payment Envelope Generator</h1>
+    <label for="senderSecretKey">Sender's Secret Key:</label>
+    <input type="text" id="senderSecretKey" />
+    <br>
+    <br>
+    <label for="receiverPublicKey">Receiver's Public Key:</label>
+    <input type="text" id="receiverPublicKey" />
+    <br>
+    <br>
+    <label for="amount">Amount to Send (XLM):</label>
+    <input type="number" id="amount" />
+    <br>
+    <br>
+<button id="generateButton" onclick="generateEnvelope()">Generate XDR Envelope</button>
+
+    <div id="xdrDisplay" style="margin-top: 20px; display: none;">
+        <h3>Generated XDR Envelope:</h3>
+        <textarea id="xdrTextArea" rows="6" cols="60" readonly></textarea><br>
+        <button onclick="copyXdr()">Copy XDR</button>
+        <p id="copyStatus"></p>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.min.js"></script>
+<script src="./_content/pakana.stellar.components/js/xdrPayGenerator.js"></script>
+   

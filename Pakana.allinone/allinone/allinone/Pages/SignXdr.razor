@@ -1,0 +1,15 @@
+﻿@page "/AddSignature"
+@rendermode InteractiveAuto
+
+<h2>Add Signature to Stellar XDR</h2>
+<div>
+    <textarea id="xdrInputro" placeholder="Enter XDR string here" rows="4"cols="50"></textarea>
+    <input type="text" id="secretKeymine" placeholder="Enter your secret key">
+    <button onclick="addSignature()">Add Signature</button>
+    <p id="newXdrOutput"></p>
+    <button onclick="copyNewXdr()">Copy XDR</button>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.min.js"></script>
+<script src="./_content/pakana.stellar.components/js/Xdrgen.js"></script>

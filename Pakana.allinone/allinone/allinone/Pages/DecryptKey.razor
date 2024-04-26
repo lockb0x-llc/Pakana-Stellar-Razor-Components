@@ -1,0 +1,43 @@
+﻿@page "/Dkey"
+@rendermode InteractiveAuto
+
+@inject IJSRuntime JSRuntime
+
+
+
+<h1>Secret Key Decryption</h1>
+<form id="decryptionForm">
+    <label for="encryptedKey">Encrypted Key:</label>
+    <textarea id="encryptedKey" rows="5" cols="50"
+              required></textarea><br><br>
+    <label for="decryptionSalt">Decryption Salt:</label>
+    <input type="text" id="decryptionSalt" required><br><br>
+    <button type="submit">Decrypt Key</button>
+</form>
+<div id="decryptedKey"></div>
+<button id="copyDecryptedKeyButton" style="display: none;">
+    Copy Decrypted Key
+</button>
+
+@code {
+    private string encryptedKey;
+    private string decryptionSalt;
+    private string decryptedKey;
+    private bool showCopyDecryptedKeyButton = false;
+
+    private async Task HandleDecryption()
+    {
+        decryptedKey = await JSRuntime.InvokeAsync<string>("decryptionFunction", encryptedKey, decryptionSalt);
+        showCopyDecryptedKeyButton = true;
+        StateHasChanged();
+    }
+
+    private async Task CopyDecryptedKeyToClipboard()
+    {
+        await JSRuntime.InvokeVoidAsync("copyDecryptedKeyToClipboard", decryptedKey);
+    }
+}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.8/sjcl.js"></script>
+<script src="./_content/pakana.stellar.components/js/decryptionKey.js"></script>

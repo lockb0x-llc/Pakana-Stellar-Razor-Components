@@ -1,0 +1,15 @@
+﻿@page "/RemoveSigner"
+@rendermode InteractiveAuto
+
+@using Microsoft.JSInterop
+
+<h2>Remove Signer from Stellar Account</h2>
+<div>
+    <input type="text" id="accountSecretmine" placeholder="Enter account secret key">
+    <input type="text" id="signerPublicKeymine" placeholder="Enter signer public key to remove">
+    <button onclick="removeSigner()">Remove Signer</button>
+</div>
+
+console.log("loading");
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.js"></script>
+<script src="./_content/pakana.stellar.components/js/removeSigner.js"></script>

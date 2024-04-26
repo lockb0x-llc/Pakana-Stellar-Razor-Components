@@ -1,0 +1,102 @@
+﻿@page "/Threshold"
+@inject IJSRuntime JSRuntime
+@rendermode InteractiveAuto
+
+
+<h2>Update Thresholds</h2>
+
+<label for="accountInput">Account Public Key:</label>
+<InputText id="accountInput" @bind-Value="accountPublicKey" placeholder="Enter account public key" />
+<br>
+<br>
+
+<label for="lowThresholdInput">Low Threshold:</label>
+<InputNumber id="lowThresholdInput" @bind-Value="lowThreshold" min="0" max="255" placeholder="Enter low threshold" />
+<br>
+<br>
+
+<label for="medThresholdInput">Medium Threshold:</label>
+<InputNumber id="medThresholdInput" @bind-Value="medThreshold" min="0" max="255" placeholder="Enter medium threshold" />
+<br>
+<br>
+
+<label for="highThresholdInput">High Threshold:</label>
+<InputNumber id="highThresholdInput" @bind-Value="highThreshold" min="0" max="255" placeholder="Enter high threshold" />
+<br>
+<br>
+
+<label for="secretKeyInput">Account Secret Key:</label>
+<InputText id="secretKeyInput" @bind-Value="secretKey" type="password" placeholder="Enter account secret key" />
+<br>
+<br>
+
+<button @onclick="UpdateThresholds">Update Thresholds</button>
+<p>@resultMessageon</p>
+
+@code {
+    private string accountPublicKey;
+    private int lowThreshold;
+    private int medThreshold;
+    private int highThreshold;
+    private string secretKey;
+    private string resultMessageon;
+
+    private async Task UpdateThresholds()
+    {
+        try
+        {
+            await JSRuntime.InvokeVoidAsync("interop.updateThresholds", accountPublicKey, lowThreshold, medThreshold, highThreshold, secretKey);
+            resultMessageon = "Thresholds updated successfully!";
+        }
+        catch (Exception ex)
+        {
+            resultMessageon = "Error updating thresholds. Please try again.";
+            Console.WriteLine(ex.Message);
+        }
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            LoadStellarSDK();
+        }
+    }
+
+    private void LoadStellarSDK()
+    {
+        JSRuntime.InvokeVoidAsync("eval", JSContent());
+    }
+
+    private string JSContent() => @"
+        window.interop = {
+            updateThresholds: async function (accountPublicKey, lowThreshold, medThreshold, highThreshold, secretKey) {
+                try {
+                    const server = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org');
+                    const account = await server.loadAccount(accountPublicKey);
+                    const transaction = new StellarSdk.TransactionBuilder(account, {
+                        fee: StellarSdk.BASE_FEE,
+                        networkPassphrase: StellarSdk.Networks.TESTNET,
+                    })
+                    .addOperation(StellarSdk.Operation.setOptions({
+                        lowThreshold: lowThreshold,
+                        medThreshold: medThreshold,
+                        highThreshold: highThreshold
+                    }))
+                    .setTimeout(180)
+                    .build();
+                    transaction.sign(StellarSdk.Keypair.fromSecret(secretKey));
+                    const response = await server.submitTransaction(transaction);
+                    console.log('Transaction response:', response);
+                } catch (error) {
+                    console.error('Error updating thresholds:', error);
+                    throw new Error('Error updating thresholds: ' + error.message);
+                }
+            }
+        };
+
+        import('https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.3.0/stellar-sdk.min.js').then(() => {
+            console.log('Stellar SDK loaded.');
+        }).catch(error => console.error('Failed to load Stellar SDK:', error));
+    ";
+}

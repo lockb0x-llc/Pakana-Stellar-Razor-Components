@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pakana.stellar.components", "allinone\pakana.stellar.components.csproj", "{BD55879E-C712-4B2A-85FB-30EDBD53D9EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD55879E-C712-4B2A-85FB-30EDBD53D9EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD55879E-C712-4B2A-85FB-30EDBD53D9EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD55879E-C712-4B2A-85FB-30EDBD53D9EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD55879E-C712-4B2A-85FB-30EDBD53D9EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E9A1053-0A26-4FDE-B96A-4ADDB9F3A294}
+	EndGlobalSection
+EndGlobal

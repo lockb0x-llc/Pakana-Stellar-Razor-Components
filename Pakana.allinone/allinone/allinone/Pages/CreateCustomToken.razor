@@ -1,0 +1,56 @@
+﻿@page "/Customtoken"
+@inject IJSRuntime JSRuntime
+@rendermode InteractiveAuto
+
+<h1>Create Custom Token</h1>
+<form id="tokenForm">
+    <label for="tokenName">Token Name:</label>
+    <input type="text" id="tokenName" required><br><br>
+    <label for="tokenSymbol">Token Symbol:</label>
+    <input type="text" id="tokenSymbol" required><br><br>
+    <label for="tokenAmount">Token Amount:</label>
+    <input type="number" id="tokenAmountinsecret" required><br><br>
+    <label for="issuingSecretKey">Issuing Account Secret Key:</label>
+    <input type="text" id="issuingSecretKey" required><br><br>
+    <label for="recipientPublicKey">Issuing Account Public Key:</label>
+    <input type="text" id="recipientPublicKey" required><br><br>
+    <button type="submit">Create Token</button>
+</form>
+
+
+<div id="messagethree">@Message</div>
+
+@code {
+    private TokenFormData FormData = new TokenFormData();
+    private string Message;
+
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            var result = await JSRuntime.InvokeAsync<string>("createCustomToken",
+                FormData.TokenName, FormData.TokenSymbol, FormData.TokenAmount,
+                FormData.IssuingSecretKey, FormData.RecipientPublicKey);
+
+            Message = result;
+        }
+        catch (Exception ex)
+        {
+            Message = $"Failed to create token. Please try again. Error: {ex.Message}";
+        }
+    }
+
+    public class TokenFormData
+    {
+        public string TokenName { get; set; }
+        public string TokenSymbol { get; set; }
+        public decimal TokenAmount { get; set; }
+        public string IssuingSecretKey { get; set; }
+        public string RecipientPublicKey { get; set; }
+    }
+}
+@{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.js"></script>
+    <script src="./_content/pakana.stellar.components/js/createCustomToken.js"></script>
+
+}

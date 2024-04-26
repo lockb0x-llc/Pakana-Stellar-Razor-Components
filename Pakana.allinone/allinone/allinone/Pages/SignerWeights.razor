@@ -1,0 +1,86 @@
+﻿@page "/Manage"
+@rendermode InteractiveAuto
+@inject IJSRuntime JSRuntime
+@using System.Text.Json
+<h1>Stellar Account Signers and Weights</h1>
+<EditForm Model="@this" OnValidSubmit="FetchAccountDetails">
+    <div>
+        <label for="publicAddressInput">Public Address:</label>
+        <InputText id="publicAddressInput" @bind-Value="publicAddress" placeholder="Enter public address" />
+        <button type="submit">Fetch Account Details</button>
+    </div>
+</EditForm>
+
+@if (accountDetailsVisible)
+{
+    <div style="margin-top: 20px;">
+        <h2>Account Details</h2>
+        <p><strong>Public Address:</strong> @publicAddress</p>
+        <p><strong>High Threshold:</strong> @highThreshold</p>
+        <p><strong>Signers:</strong></p>
+        <ul>
+            @foreach (var signer in signers)
+            {
+                <li>@signer.Key (@signer.Weight)</li>
+            }
+        </ul>
+    </div>
+}
+
+@code {
+    private string publicAddress = "GCK4ZVCR74F5AHGZPPWUN6MG6DIRBVN3F2VFRMGEXWQYRW7EUSML27VB"; // Example testnet address
+    private int highThreshold;
+    private List<Signer> signers = new List<Signer>();
+    private bool accountDetailsVisible = false;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("loadStellarSdk");
+        }
+    }
+
+
+    private async Task FetchAccountDetails()
+    {
+        try
+        {
+            var accountDetails = await JSRuntime.InvokeAsync<JsonElement>("fetchAccountDetailsFromStellar", publicAddress);
+            if (accountDetails.ValueKind != JsonValueKind.Undefined && accountDetails.ValueKind != JsonValueKind.Null)
+            {
+                highThreshold = accountDetails.GetProperty("highThreshold").GetInt32();
+                var signersJson = accountDetails.GetProperty("signers");
+                signers = new List<Signer>();
+
+                foreach (JsonElement signerElement in signersJson.EnumerateArray())
+                {
+                    signers.Add(new Signer
+                        {
+                            Key = signerElement.GetProperty("key").GetString(),
+                            Weight = signerElement.GetProperty("weight").GetInt32()
+                        });
+                }
+                accountDetailsVisible = true;
+            }
+            else
+            {
+                throw new InvalidOperationException("Failed to fetch account details or no data found.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Error fetching account details: {ex.Message}");
+            accountDetailsVisible = false;
+        }
+    }
+
+
+    public class Signer
+    {
+        public string Key { get; set; }
+        public int Weight { get; set; }
+    }
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.3.0/stellar-sdk.min.js"></script>
+<script src="./_content/pakana.stellar.components/js/signerWeights.js"></script>
