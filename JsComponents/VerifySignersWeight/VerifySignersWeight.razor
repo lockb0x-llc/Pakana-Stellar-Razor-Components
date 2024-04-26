@@ -1,0 +1,25 @@
+﻿@* The Verify Signers Weight function checks and displays the signers of a Stellar account and the weight of their account.*@
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Stellar Account</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.min.js"></script>
+</head>
+<body>
+    <h1>Stellar Account Signers and Weights</h1>
+
+    <label for="publicAddress">Public Address:</label>
+    <input type="text" id="publicAddressInput" placeholder="Enter public address">
+    <button onclick="fetchAccountDetails()">Fetch Account Details</button>
+
+    <div id="accountDetails" style="display: none; margin-top: 20px;">
+        <h2>Account Details</h2>
+        <p><strong>Public Address:</strong> <span id="publicAddress"></span></p>
+        <p><strong>High Threshold:</strong> <span id="highThreshold"></span></p>
+        <p><strong>Signers:</strong></p>
+        <ul id="signersList"></ul>
+    </div>
+</body>

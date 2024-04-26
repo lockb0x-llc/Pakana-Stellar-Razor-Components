@@ -1,0 +1,37 @@
+﻿@* The Pin File Component takes in a file, pins it to ipfs via pinata and attaches the files hash to the memo of a transaction on Stellar.*@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin File to IPFS and Send Payment</title>
+    <!-- Include ipfs-http-client library -->
+    <script src="https://cdn.jsdelivr.net/npm/ipfs-http-client/dist/index.min.js"></script>
+    <!-- Include stellar-sdk library -->
+    <script src="https://cdn.jsdelivr.net/npm/stellar-sdk"></script>
+</head>
+
+<body>
+    <h1>Pin File to IPFS and Send Payment</h1>
+    <label for="fileInput">Choose a file:</label>
+    <input type="file" id="fileInput" accept=".txt,.pdf,.jpg,.png">
+    <br>
+    <label for="apiKeyInput">Enter your Pinata API key:</label>
+    <input type="text" id="apiKeyInput">
+    <br>
+    <label for="senderPublicKeyInput">Sender Public Key:</label>
+    <input type="text" id="senderPublicKeyInput">
+    <br>
+    <label for="senderSecretKeyInput">Sender Secret Key:</label>
+    <input type="password" id="senderSecretKeyInput">
+    <br>
+    <label for="destinationPublicKeyInput">Recipient Public Key:</label>
+    <input type="text" id="destinationPublicKeyInput">
+    <br>
+    <label for="paymentAmountInput">Payment Amount (XLM):</label>
+    <input type="number" id="paymentAmountInput" step="0.01">
+    <br>
+    <button onclick="pinFile()">Pin File to IPFS and Send Payment</button>
+    <p>IPFS Hash: <span id="ipfsHash"></span></p>
+
+</body>

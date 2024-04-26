@@ -1,0 +1,35 @@
+﻿@* The Create Custom Token function generates a custom asset on Stellar.*@
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Custom Token</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.js"></script>
+</head>
+<body>
+    <h1>Create Custom Token</h1>
+
+    <form id="tokenForm">
+        <label for="tokenName">Token Name:</label>
+        <input type="text" id="tokenName" required><br><br>
+
+        <label for="tokenSymbol">Token Symbol:</label>
+        <input type="text" id="tokenSymbol" required><br><br>
+
+        <label for="tokenAmount">Token Amount:</label>
+        <input type="number" id="tokenAmount" required><br><br>
+
+        <label for="issuingSecretKey">Issuing Account Secret Key:</label>
+        <input type="text" id="issuingSecretKey" required><br><br>
+
+        <label for="recipientPublicKey">Issuing Account Public Key:</label>
+        <input type="text" id="recipientPublicKey" required><br><br>
+
+        <button type="submit">Create Token</button>
+    </form>
+
+    <div id="message"></div>
+
+</body>

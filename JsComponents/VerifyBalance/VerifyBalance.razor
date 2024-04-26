@@ -1,0 +1,29 @@
+﻿@* The Verify Balance function checks and displays the balance of a Stellar
+account.*@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Stellar Key Pair & Check Balance</title>
+    <!-- Include Stellar SDK via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/8.0.0/stellarsdk.min.js"></script>
+</head>
+<body>
+    <h1>Verify Stellar Key Pair & Check Balance</h1>
+    <label for="publicKey">Public Key:</label>
+    <input type="text" id="publicKey" placeholder="Enter public key" style="width:
+    300px;">
+    <br>
+    <br>
+    <label for="secretKey">Secret Key:</label>
+    <input type="text" id="secretKey" placeholder="Enter secret key" style="width:
+    300px;">
+    <br>
+    <br>
+    <button onclick="verifyAndCheckBalance()">
+        Verify Key Pair & Check
+        Balance
+    </button>
+    <div id="balanceResult" style="margin-top: 20px;"></div>
+
+</body>

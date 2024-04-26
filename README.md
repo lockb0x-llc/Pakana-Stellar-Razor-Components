@@ -2,10 +2,12 @@
 
 ## Description:
 
-The goal of the Pakana-Stellar-Razor-Components project is to provide a set of powerful and customizable ASP.NET Razor components for integrating Stellar blockchain functionality seamlessly into your web applications. 
+The Pakana.Stellar.Components project provides a set of powerful and customizable ASP.NET Razor components for integrating Stellar blockchain functionality seamlessly into your web applications. 
 These components aim to simplify the integration process, offering a user-friendly interface for Stellar account creation, multisignature operations, and payments.
 
 We invite you to fork and use this source-code in your own ASP.NET Razor projects. If you make improvements, please submit them via pull-request. 
+
+Visit the [PakanaComponents.com](https://www.pakanacomponents.com) website for documentation, installation, tutorials and resources.
 
 Thanks!
 Pakana Team
@@ -22,13 +24,22 @@ Pakana Team
 - Implement event handlers for transaction submission and signature collection.
 - Seamlessly integrate Stellar transactions into your application workflow.
 
-## Installation:
+## NuGet Package Installation:
 
-- Add the Pakana-Stellar-Razor-Components to your project.
+*.Net8.0 or greater is required.*
+    
+```csharp copy
+dotnet add package Pakana.Stellar.Components --version 1.0.0
+```
+
+# Customization:
+
+- Add the Pakana.Stellar.Components to your project.
 - Download and Install the Stellar SDK or use the CDNJS to quickly get started.
 - Configure the Stellar SDK with your network passphrase and other relevant details.
 - Configure the Variables in the HorizonServer.js file to match your projects wallets and network details.
 - Customize the components to fit your application requirements.
+- Visit the [PakanaComponents.com](https://www.pakanacomponents.com) website for documentation, installation, tutorials and resources.
 
 ## Integration:
 

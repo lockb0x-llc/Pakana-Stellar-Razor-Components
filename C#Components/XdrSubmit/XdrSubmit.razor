@@ -1,0 +1,16 @@
+﻿@* The Submit XDR function submits a Stellar XDR transaction envelope to the
+network.*@
+
+
+@page "/SubmitXDR"
+@rendermode InteractiveAuto
+
+<h2>Submit Stellar XDR Transaction</h2>
+<div>
+    <textarea id="xdrInputanother" placeholder="Enter XDR string here" rows="4"cols="50"></textarea>
+    <button onclick="submitXdrtwo()">Submit XDR</button>
+    <p id="submissionResult"></p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.min.js"></script>
+<script src="your-file-path/js/xdrSubmit.js"></script>

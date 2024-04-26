@@ -1,0 +1,28 @@
+﻿@* The Verify Custom Token function checks and displays a Custom Stellar Assets with corresponding information. *@
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Token Information</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.min.js"></script>
+</head>
+<body>
+    <h1>Custom Token Information</h1>
+
+    <form id="tokenInfoForm">
+        <label for="tokenCode">Token Code:</label>
+        <input type="text" id="tokenCode" required><br><br>
+
+        <label for="issuerAccount">Issuer Account Public Key:</label>
+        <input type="text" id="issuerAccount" required><br><br>
+
+        <button type="submit">Get Token Information</button>
+    </form>
+
+    <div id="tokenInfo"></div>
+
+    <div id="message"></div>
+
+</body>

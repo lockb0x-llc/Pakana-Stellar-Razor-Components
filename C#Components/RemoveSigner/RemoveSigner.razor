@@ -1,0 +1,19 @@
+﻿@* The Remove Signer function removes a signer from a Stellar account.*@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Remove Signer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellarsdk.js"></script>
+</head>
+<body>
+    <h2>Remove Signer from Stellar Account</h2>
+    <div>
+        <input type="text" id="accountSecret" placeholder="Enter account secret
+key">
+        <input type="text" id="signerPublicKey" placeholder="Enter signer public key
+to remove">
+        <button onclick="removeSigner()">Remove Signer</button>
+    </div>
+</body>

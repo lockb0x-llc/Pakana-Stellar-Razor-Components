@@ -1,0 +1,18 @@
+﻿@* The Generate Key Pair function Generates a new Stellar Key Pair, establishing a
+new Stellar account. *@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Key Pair Generator</title>
+    <!-- Include Stellar SDK via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/8.0.0/stellarsdk.min.js"></script>
+</head>
+
+<body>
+    <h1>Stellar Key Pair Generator</h1>
+    <button onclick="generateKeyPair()">Generate Key Pair</button>
+    <div id="keyPairDisplay" style="margin-top: 20px;">
+        <!-- Key pair will be displayed here -->
+    </div>
+</body>
