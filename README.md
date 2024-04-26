@@ -1,4 +1,4 @@
-# Pakana Stellar Razor Components
+# Pakana Stellar Components
 
 ## Description:
 
