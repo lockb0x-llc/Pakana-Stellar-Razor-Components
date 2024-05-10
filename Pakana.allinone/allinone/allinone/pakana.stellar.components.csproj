@@ -8,7 +8,7 @@
 	  <Product>pakana.stellar.components</Product>
 	  <PackageId>pakana.stellar.components</PackageId>
 	  <Title>pakana.stellar.components</Title>
-	  <Version>0.0.5</Version>
+	  <Version>0.0.6</Version>
 	  <Authors>Josh Kassabian, Steven Tomlinson, Muhammad Faizan</Authors>
 	  <Company>Pakana</Company>
 	  <Description>The Pakana.Stellar.Components project provides a set of powerful and customizable ASP.NET Razor components for integrating Stellar blockchain functionality seamlessly into your web applications. These components aim to simplify the integration process, offering a user-friendly interface for Stellar account creation, multisignature operations, and payments.</Description>

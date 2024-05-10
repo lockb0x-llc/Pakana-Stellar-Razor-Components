@@ -3,13 +3,55 @@
 
 @using Microsoft.JSInterop
 
+<style>
+    .container {
+        margin-top: 20px;
+        background-color: #181818;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    label {
+        color: #ccc;
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    button {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        background-color: #000;
+        color: white;
+        caret-color: white;
+        border-color: #666;
+    }
+
+    button {
+        background-color: #192734;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
 <h2>Remove Signer from Stellar Account</h2>
+<div class="container">
 <div>
     <input type="text" id="accountSecretmine" placeholder="Enter account secret key">
     <input type="text" id="signerPublicKeymine" placeholder="Enter signer public key to remove">
     <button onclick="removeSigner()">Remove Signer</button>
 </div>
+</div>
 
-console.log("loading");
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.js"></script>
 <script src="./_content/pakana.stellar.components/js/removeSigner.js"></script>

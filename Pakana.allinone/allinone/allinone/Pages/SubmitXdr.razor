@@ -1,9 +1,63 @@
 ﻿@page "/SubmitXDR"
 @rendermode InteractiveAuto
 
+<style>
+    .container {
+        margin-top: 20px;
+        background-color: #181818;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    label {
+        color: #ccc;
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    button {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        background-color: #000;
+        color: white;
+        caret-color: white;
+        border-color: #666;
+    }
+
+    textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: #000;
+    color: white;
+    caret-color: white;
+    border-color: #666;
+    }
+
+    button {
+        background-color: #192734;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
 <h2>Submit Stellar XDR Transaction</h2>
-<div>
-    <textarea id="xdrInputanother" placeholder="Enter XDR string here" rows="4"cols="50"></textarea>
+<div class="container">
+    <textarea id="xdrInputanother" type="textarea" placeholder="Enter XDR string here" rows="4"cols="50"></textarea>
     <button onclick="submitXdrtwo()">Submit XDR</button>
     <p id="submissionResult"></p>
 </div>

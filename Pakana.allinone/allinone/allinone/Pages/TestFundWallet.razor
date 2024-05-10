@@ -1,18 +1,59 @@
 ﻿@page "/FundWallet"
 @rendermode InteractiveAuto
 
-<h1>Fund Stellar Wallet</h1>
-<label for="walletAddress">Enter Wallet Address:</label>
-<input type="text" id="walletAddress" placeholder="Enter wallet address"
-       style="width: 300px;">
-<button onclick="fundWallet()">Fund Wallet</button>
-<div id="result" style="margin-top: 20px;"></div>
+<style>
+    .container {
+        margin-top: 20px;
+        background-color: #181818;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
 
-@code{
-    string walletAddress{set;get;} = "";
+    label {
+        color: #ccc;
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    button {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        background-color: #000;
+        color: white;
+        caret-color: white;
+        border-color: #666;
+    }
+
+    button {
+        background-color: #192734;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+<h1>Fund Stellar Wallet</h1>
+<div class="container">
+    <label for="walletAddress">Enter Wallet Address:</label>
+    <input id="walletAddress" type="password" placeholder="Enter wallet address">
+    <button onclick="fundWallet()">Fund Wallet</button>
+    <div id="result" style="margin-top: 20px;"></div>
+</div>
+@code {
+    string walletAddress { set; get; } = "";
     string resultString { set; get; } = "";
 
-    
+
 }
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.3.0/stellar-sdk.min.js"></script>
