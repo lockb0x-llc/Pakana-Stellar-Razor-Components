@@ -8,7 +8,7 @@
 	  <Product>pakana.stellar.components</Product>
 	  <PackageId>pakana.stellar.components</PackageId>
 	  <Title>pakana.stellar.components</Title>
-	  <Version>0.0.6</Version>
+	  <Version>0.0.7</Version>
 	  <Authors>Josh Kassabian, Steven Tomlinson, Muhammad Faizan</Authors>
 	  <Company>Pakana</Company>
 	  <Description>The Pakana.Stellar.Components project provides a set of powerful and customizable ASP.NET Razor components for integrating Stellar blockchain functionality seamlessly into your web applications. These components aim to simplify the integration process, offering a user-friendly interface for Stellar account creation, multisignature operations, and payments.</Description>
@@ -27,6 +27,32 @@
 	  <RepositoryType>git</RepositoryType>
 	  <RepositoryUrl>https://github.com/lockb0x-llc/Pakana-Stellar-Razor-Components</RepositoryUrl>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <PackageTags>Stellar;Pakana;Blockchain;Opensource;Components;Crypto;DLT;Free</PackageTags>
+	  <PackageReleaseNotes>Release Notes: NuGet Package v0.0.7
+Summary
+This release includes significant updates to the user interface (UI) and addresses critical bug fixes in v0.0.6. We recommend all users to upgrade to this version.
+
+Changes and Enhancements
+UI Improvements:
+Revamped the user interface for a more intuitive and modern look.
+Improved visual consistency.
+
+Critical Bug Fixes:
+Resolved an issue with JavaScript files not being packed into v0.0.6.
+
+Compatibility
+This release is backward compatible with previous versions of the NuGet package.
+No breaking changes have been introduced.
+
+How to Upgrade
+To upgrade to the latest version, follow these steps:
+
+Open your project solution.
+
+In the Package Manager Console, run the following command:
+Update-Package pakana.stellar.components -Version 0.0.7
+
+Rebuild your solution to apply the changes.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
