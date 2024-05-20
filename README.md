@@ -9,7 +9,9 @@ We invite you to fork and use this source-code in your own ASP.NET Razor project
 
 Visit the [PakanaComponents.com](https://www.pakanacomponents.com) website for documentation, installation, tutorials and resources.
 
-If you would like to try out some of the components in a demosntration application we're developing, check-out [Lumenals.com[(https://lumenals.com) our take on Ordinals and NFTS using the Stellar Blockchain.
+If you would like to try out some of the components in a demonstration application we're developing, check-out [Lumenals.com[(https://lumenals.com). 
+It's our take on Ordinals and NFTs using the Stellar Blockchain. 
+Note: The lumenals app is beta software, please use a new dedicated TestNet account as a sandbox before minting on the Mainnet. 
 
 Thanks!
 Pakana Team
