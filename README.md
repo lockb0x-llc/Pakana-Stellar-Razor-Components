@@ -88,9 +88,9 @@ Interested in contributing or have ideas on expanding this resource?
 
 We'd love to have your help! 
 
-Submit a pull request or open an issue to get started.
+Join the Discussion, submit a pull request, or open an issue to get started.
 Or
-Contact us at the [Pakana.net](https://www.Pakana.net) for more information.
+Contact us at the <a href="https://pakana.net" target="_blank">Pakana.net</a> site for more information.
 
 ## License:
 
