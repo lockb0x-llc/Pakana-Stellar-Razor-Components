@@ -13,6 +13,9 @@ If you would like to try out some of the components in a demonstration applicati
 It's our take on Ordinals and NFTs using the Stellar Blockchain. 
 Note: The lumenals app is beta software, please use a new dedicated TestNet account as a sandbox before minting on the Mainnet. 
 
+The development, distribution, and maintenance of these components is mad e possible, thanks to an award from 
+[The Stellar Community Foundation](https://dashboard.communityfund.stellar.org/scfawards/scf-25/activationawardreview/suggestion/853)
+
 Thanks!
 Pakana Team
 
