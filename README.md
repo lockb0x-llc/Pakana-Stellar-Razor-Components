@@ -2,10 +2,10 @@
 
 ## Description:
 
-The Pakana.Stellar.Components project provides a set of powerful and customizable ASP.NET Razor components for integrating Stellar blockchain functionality seamlessly into your web applications. 
+The Pakana Stellar Components project provides a set of powerful and customizable ASP.NET Razor and Blazor UI and UX Components for integrating Stellar blockchain functionality seamlessly into your web applications using Visual Studio or Visual Studio Code. 
 These components aim to simplify the integration process, offering a user-friendly interface for Stellar account creation, multisignature operations, and payments.
 
-We invite you to fork and use this source-code in your own ASP.NET Razor projects. If you make improvements, please submit them via pull-request. 
+We invite you to fork and use this source-code in your own ASP.NET Razor projects. If you make improvements, please submit them via pull-request or if you find a bug or have an idea for improvement, please post an Issue or use the Discussion tab.
 
 Visit the <a href="https://www.pakanacomponents.com" target="_blank">PakanaComponents.com</a>
  website for documentation, installation, tutorials and resources.
@@ -17,7 +17,7 @@ Note: The lumenals app is beta software, please use a new dedicated TestNet acco
 The development, distribution, and maintenance of these components is mad e possible, thanks to an award from 
 <a href="https://dashboard.communityfund.stellar.org/scfawards/scf-25/activationawardreview/suggestion/853" target="_blank">The Stellar Community Foundation</a>
 
-Additopnally, we make use of the <a href="https://github.com/stellar/js-stellar-sdk" target="_blank">Stellar Javascript SDK</a> to integrate with the Stellar Horizon API.
+Additionally, we make use of the <a href="https://github.com/stellar/js-stellar-sdk" target="_blank">Stellar Javascript SDK</a> to integrate with the Stellar Horizon API.
 
 Thanks!
 Pakana Team
