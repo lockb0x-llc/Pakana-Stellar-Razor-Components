@@ -1,4 +1,4 @@
-# Pakana Stellar Components
+# Pakana Stellar Components for DotNet Razor and Blazor Development
 
 ## Description:
 
