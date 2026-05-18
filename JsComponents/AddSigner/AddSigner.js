@@ -5,7 +5,7 @@
     document.getElementById('signerPublicKey').value;
     const signerWeight = document.getElementById('signerWeight').value;
     const StellarSdk = window.StellarSdk;
-    const server = new StellarSdk.Horizon.Server('https://horizontestnet.stellar.org');
+    const server = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org');
 
     server.loadAccount(StellarSdk.Keypair.fromSecret(accountSecret).publicKey())
  .then(account => {

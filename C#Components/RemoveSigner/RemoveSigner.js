@@ -8,7 +8,7 @@
     const signerPublicKey =
     document.getElementById('signerPublicKey').value;
     const StellarSdk = window.StellarSdk;
-    const server = new StellarSdk.Horizon.Server('https://horizontestnet.stellar.org');
+    const server = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org');
     const sourceKeys = StellarSdk.Keypair.fromSecret(accountSecret);
     server.loadAccount(sourceKeys.publicKey())
  .then(account => {

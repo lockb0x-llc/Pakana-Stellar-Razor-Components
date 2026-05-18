@@ -1,7 +1,7 @@
 ﻿<script language="javascript">
     document.addEventListener("DOMContentLoaded", async function () {
     try {
-        horizonServer = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org');
+        const horizonServer = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org');
     console.log("Stellar SDK Server instance created:", horizonServer);
     } catch (e) {
         console.error("Error creating StellarSdk.Server instance:", e);
@@ -28,23 +28,23 @@
     horizonServer.loadAccount(senderAddress)
     .then(function (account) {
                 // Build the transaction with TimeBounds
-                const transaction = new horizonServer.TransactionBuilder(account, {
+                const transaction = new StellarSdk.TransactionBuilder(account, {
         fee: feeStroops,
-    networkPassphrase: StellarSDK.Networks.TESTNET,
+    networkPassphrase: StellarSdk.Networks.TESTNET,
     timebounds: timeBounds, // Set the TimeBounds
                     })
     .addOperation(
-    horizonServer.Operation.payment({
+    StellarSdk.Operation.payment({
         destination: receiverAddress,
-    asset: horizonServer.Asset.native(),
+    asset: StellarSdk.Asset.native(),
     amount: amount,
                         })
     )
-    .addMemo(horizonServer.Memo.text(memo))
+    .addMemo(StellarSdk.Memo.text(memo))
     .build();
 
     // Sign the transaction
-    transaction.sign(horizonServer.Keypair.fromSecret(secretKey));
+    transaction.sign(StellarSdk.Keypair.fromSecret(secretKey));
 
     // Submit the transaction to the network
     return horizonServer.submitTransaction(transaction);

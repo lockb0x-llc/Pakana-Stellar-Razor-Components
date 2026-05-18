@@ -30,7 +30,7 @@ async function generateEnvelope() {
         // Stellar keypair of sending account
         const senderKeypair =
             StellarSdk.Keypair.fromSecret(senderSecretKey);
-        const server = new StellarSdk.Horizon.Server('https://horizontestnet.stellar.org');
+        const server = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org');
         // Load sender account details from the server
         const account = await server.loadAccount(senderKeypair.publicKey());
         // Calculate current time and set time bounds for the transaction (1 

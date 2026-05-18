@@ -6,7 +6,7 @@
         displayResult('Invalid wallet address.');
     return;
  }
-    const server = new StellarSdk.Horizon.Server('https://horizontestnet.stellar.org');
+    const server = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org');
     // Call Friendbot to fund the wallet
 
     fetch(`https://friendbot.stellar.org?addr=${encodeURIComponent(walletAddress)}`)

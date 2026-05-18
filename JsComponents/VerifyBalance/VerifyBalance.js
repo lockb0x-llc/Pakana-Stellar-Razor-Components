@@ -10,7 +10,7 @@
         displayBalanceResult('Invalid secret key.');
     return;
  }
-    const server = new StellarSdk.Horizon.Server('https://horizontestnet.stellar.org');
+    const server = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org');
     // Use the secret key to sign transactions
     const keyPair = StellarSdk.Keypair.fromSecret(secretKey);
     // Check account balance
