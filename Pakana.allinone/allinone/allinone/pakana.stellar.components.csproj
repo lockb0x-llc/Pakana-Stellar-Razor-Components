@@ -23,7 +23,7 @@
 	  <StaticWebAssetProjectMode>Default</StaticWebAssetProjectMode>
 	  <Copyright>MIT</Copyright>
 	  <PackageProjectUrl>https://pakanacomponents.com</PackageProjectUrl>
-	  <PackageIcon>logo512.png</PackageIcon>
+	  <PackageIcon>pkcomponents.png</PackageIcon>
 	  <RepositoryType>git</RepositoryType>
 	  <RepositoryUrl>https://github.com/lockb0x-llc/Pakana-Stellar-Razor-Components</RepositoryUrl>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -56,7 +56,7 @@ Rebuild your solution to apply the changes.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\..\..\OneDrive\Desktop\Assets\logo512.png">
+    <None Include="..\..\..\pkcomponents.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

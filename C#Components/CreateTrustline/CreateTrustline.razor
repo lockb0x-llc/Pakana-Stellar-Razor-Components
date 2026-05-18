@@ -25,7 +25,7 @@
     </div>
     <div>
         <label for="secretKey">Destination Account Secret Key:</label>
-        <InputText id="secretKey" @bind-Value="secretKey" required></InputText><br><br>
+        <InputText id="secretKey" @bind-Value="secretKey" type="password" required></InputText><br><br>
     </div>
     <button type="submit">Create Trustline</button>
 </EditForm>
@@ -36,10 +36,10 @@
 }
 
 @code {
-    private string assetCode = "USD";
-    private string issuerAccount = "GDUKMGUGDQWSQ3DRY5E7D3ZPHDSFDPZOJKKGOV5ABLMCIDG6ASE4VRUB";
-    private string destinationAccount = "GC4DJYMFQFI4L6QHV7H3YSDG5E2B3OW2IGZQQRFKNYSVBZXG3X64F2W4";
-    private string secretKey = "SCZ6JIZDJMNZ4OQJAJBH5JFBQ4UWQMI2V3SLEQG67YRJPKRYQLT7TIT5";
+    private string assetCode = string.Empty;
+    private string issuerAccount = string.Empty;
+    private string destinationAccount = string.Empty;
+    private string secretKey = string.Empty;
     private string message;
 
     private async Task HandleValidSubmit()
@@ -63,4 +63,3 @@
         message = newMessage;
     }
 }
-
