@@ -1,0 +1,22 @@
+@page "/MakePayment"
+@rendermode InteractiveAuto
+
+<h2>Stellar XLM Payment</h2>
+<div>
+    <input type="text" id="senderSecretinone" placeholder="Enter sender's secret key">
+    <input type="text" id="receiverPublicKeyinone" placeholder="Enter receiver's public key">
+    <input type="number" id="amountinone" placeholder="Enter amount in XLM">
+    <button onclick="makePaymentinone()">Send Payment</button>
+</div>
+
+@code{
+    string senderSecretKey { set; get; } = "";
+    string receiverPublicKey { set; get; } = "";
+    int amount { set; get; } = 0;
+
+    
+}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.min.js"></script>
+<script src="your-file-path/js/xlmPayment.js"></script>

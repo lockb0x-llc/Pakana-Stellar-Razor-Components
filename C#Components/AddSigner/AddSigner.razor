@@ -1,0 +1,25 @@
+﻿@* The Add Signer function adds a new signer to a Stellar account. This Function
+retains the master key, keeping the owner in control*@
+
+
+@page "/AddSigner"
+@rendermode InteractiveAuto
+
+<h2>Add Signer to Stellar Account</h2>
+<div>
+    <input type="text" id="accountSecret" placeholder="Enter account secret
+key">
+    <input type="text" id="signerPublicKey" placeholder="Enter signer public
+key">
+    <input type="text" id="signerWeight" placeholder="Enter signer weight">
+    <button onclick="addSigner()">Add Signer</button>
+</div>
+@code{
+    string secretKey {set;get;} = "";
+    string signerPublicKey {set;get;} = "";
+    int signerWeight {set;get;} = 1;
+
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.min.js"></script>
+<script src="your-file-path/js/addSigner.js"></script>

@@ -1,0 +1,78 @@
+﻿@page "/Key"
+@rendermode InteractiveAuto
+@inject IJSRuntime JSRuntime
+
+<style>
+    form {
+        margin-top: 20px;
+        background-color: #181818;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px; /* Add margin-bottom */
+    }
+
+    label {
+        color: #ccc;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    input[type="file"],
+    button,
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        background-color: #000;
+        color: white;
+        caret-color: white;
+        border-color: #666;
+    }
+
+    button {
+        background-color: #192734;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+<h1>Secret Key Encryption</h1>
+ <form id="encryptionForm">
+ <label for="secretKeyon">Secret Key:</label>
+ <input type="text" id="secretKeyon" required><br><br>
+    <label for="salton">Encryption Salt:</label>
+ <input type="text" id="salton" required><br><br>
+ <button type="submit">Encrypt Secret Key</button>
+ </form>
+ <div id="encryptedSecretKey"></div>
+ <button id="copyButton" style="display: none;">Copy Encrypted Secret
+Key</button>
+
+@code {
+    private string secretData;
+    private string encryptedSecretKey;
+    private string salton;
+    private string result;
+    private bool showCopyButton = false;
+
+    private async Task HandleEncryption()
+    {
+        result = await JSRuntime.InvokeAsync<string>("encryptKey", secretData, salton);
+        encryptedSecretKey = result;  // Store encrypted result for possible decryption
+        showCopyButton = true;
+        StateHasChanged();
+    }
+
+}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.8/sjcl.js"></script>
+<script src="./_content/pakana.stellar.components/js/encryptKey.js"></script>

@@ -1,0 +1,65 @@
+﻿@* The Create Trustline function authorizes custom assets to be accepted from one Stellar Key Pair, to another Stellar account. *@
+
+
+
+@page "/Trust"
+@rendermode InteractiveAuto
+@inject IJSRuntime JSRuntime
+
+<h1>Create Trustline</h1>
+<EditForm Model="@this" OnValidSubmit="HandleValidSubmit" FormName="CreateTrustlineForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label for="assetCode">Asset Code:</label>
+        <InputText id="assetCode" @bind-Value="assetCode" required></InputText><br><br>
+    </div>
+    <div>
+        <label for="issuerAccount">Issuer Account:</label>
+        <InputText id="issuerAccount" @bind-Value="issuerAccount" required></InputText><br><br>
+    </div>
+    <div>
+        <label for="destinationAccount">Destination Account:</label>
+        <InputText id="destinationAccount" @bind-Value="destinationAccount" required></InputText><br><br>
+    </div>
+    <div>
+        <label for="secretKey">Destination Account Secret Key:</label>
+        <InputText id="secretKey" @bind-Value="secretKey" type="password" required></InputText><br><br>
+    </div>
+    <button type="submit">Create Trustline</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div id="message">@message</div>
+}
+
+@code {
+    private string assetCode = string.Empty;
+    private string issuerAccount = string.Empty;
+    private string destinationAccount = string.Empty;
+    private string secretKey = string.Empty;
+    private string message;
+
+    private async Task HandleValidSubmit()
+    {
+        // This script is a placeholder. You should replace it with your actual initialization logic.
+        var createTrustlineScript = $@"
+            alert('Submitting form with: Asset Code={assetCode}, Issuer Account={issuerAccount}, Destination Account={destinationAccount}, Secret Key={secretKey}');
+            // Actual Stellar SDK interactions should go here.
+            // For testing, we use a simple alert to simulate the process.
+        ";
+
+        await JSRuntime.InvokeVoidAsync("eval", createTrustlineScript);
+
+        // Simulated response after "submitting" the transaction
+        UpdateMessage($"Simulated: Trustline for asset '{assetCode}' supposed to be created successfully.");
+    }
+
+    [JSInvokable]
+    public void UpdateMessage(string newMessage)
+    {
+        message = newMessage;
+    }
+}

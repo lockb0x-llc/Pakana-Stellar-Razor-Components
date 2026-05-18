@@ -32,6 +32,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Compile Remove="Pakana.allinone/**" />
+		<Content Remove="Pakana.allinone/**" />
+		<EmbeddedResource Remove="Pakana.allinone/**" />
+		<None Remove="Pakana.allinone/**" />
+		<RazorGenerate Remove="Pakana.allinone/**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<None Update="README.md">
 			<Pack>True</Pack>
 			<PackagePath>content\</PackagePath>

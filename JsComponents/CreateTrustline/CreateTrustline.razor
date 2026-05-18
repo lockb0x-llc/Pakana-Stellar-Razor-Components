@@ -1,0 +1,33 @@
+﻿@* The Create Trustline function authorizes custom assets to be accepted from one Stellar Key Pair, to another Stellar account. *@
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Trustline</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.js"></script>
+</head>
+<body>
+    <h1>Create Trustline</h1>
+
+    <form id="trustlineForm">
+        <label for="assetCode">Asset Code:</label>
+        <input type="text" id="assetCode" required><br><br>
+
+        <label for="issuerAccount">Issuer Account:</label>
+        <input type="text" id="issuerAccount" required><br><br>
+
+        <label for="destinationAccount">Destination Account:</label>
+        <input type="text" id="destinationAccount" required><br><br>
+
+        <label for="secretKey">Destination Account Secret Key:</label>
+        <input type="text" id="secretKey" required><br><br>
+
+        <button type="submit">Create Trustline</button>
+    </form>
+
+    <div id="message"></div>
+
+</body>

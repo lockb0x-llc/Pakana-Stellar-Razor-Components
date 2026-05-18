@@ -1,0 +1,84 @@
+﻿@page "/Dkey"
+@rendermode InteractiveAuto
+
+@inject IJSRuntime JSRuntime
+
+<style>
+    form {
+        margin-top: 20px;
+        background-color: #181818;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px; /* Add margin-bottom */
+    }
+
+    label {
+        color: #ccc;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    input[type="file"],
+    button,
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        background-color: #000;
+        color: white;
+        caret-color: white;
+        border-color: #666;
+    }
+
+    button {
+        background-color: #192734;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+
+<h1>Secret Key Decryption</h1>
+<form id="decryptionForm">
+    <label for="encryptedKey">Encrypted Key:</label>
+    <textarea id="encryptedKey" rows="5" cols="50"
+              required></textarea><br><br>
+    <label for="decryptionSalt">Decryption Salt:</label>
+    <input type="text" id="decryptionSalt" required><br><br>
+    <button type="submit">Decrypt Key</button>
+</form>
+<div id="decryptedKey"></div>
+<button id="copyDecryptedKeyButton" style="display: none;">
+    Copy Decrypted Key
+</button>
+
+@code {
+    private string encryptedKey;
+    private string decryptionSalt;
+    private string decryptedKey;
+    private bool showCopyDecryptedKeyButton = false;
+
+    private async Task HandleDecryption()
+    {
+        decryptedKey = await JSRuntime.InvokeAsync<string>("decryptionFunction", encryptedKey, decryptionSalt);
+        showCopyDecryptedKeyButton = true;
+        StateHasChanged();
+    }
+
+    private async Task CopyDecryptedKeyToClipboard()
+    {
+        await JSRuntime.InvokeVoidAsync("copyDecryptedKeyToClipboard", decryptedKey);
+    }
+}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.8/sjcl.js"></script>
+<script src="./_content/pakana.stellar.components/js/decryptionKey.js"></script>

@@ -1,0 +1,35 @@
+﻿@* The Create Claimable Balance function creates a payment that can be claimed by a Stellar account, establishing a trustline when used with custom assets.*@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Claimable Balance</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.2.2/stellar-sdk.js"></script>
+</head>
+<body>
+    <h1>Create Claimable Balance with Custom Token</h1>
+
+    <form id="claimableBalanceForm">
+        <label for="sourceSecretKey">Source Account Secret Key:</label>
+        <input type="text" id="sourceSecretKey" required><br><br>
+
+        <label for="recipientAccount">Recipient Account:</label>
+        <input type="text" id="recipientAccount" required><br><br>
+
+        <label for="tokenCode">Token Code:</label>
+        <input type="text" id="tokenCode" required><br><br>
+
+        <label for="tokenIssuer">Token Issuer:</label>
+        <input type="text" id="tokenIssuer" required><br><br>
+
+        <label for="tokenAmount">Token Amount:</label>
+        <input type="number" id="tokenAmount" required><br><br>
+
+        <button type="submit">Create Claimable Balance</button>
+    </form>
+
+    <div id="message"></div>
+
+</body>

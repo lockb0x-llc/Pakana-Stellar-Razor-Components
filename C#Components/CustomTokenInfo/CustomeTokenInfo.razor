@@ -1,0 +1,40 @@
+﻿@* The Verify Custom Token function checks and displays a Custom Stellar Assets with corresponding information. *@
+
+
+
+@page "/Token"
+@rendermode InteractiveAuto
+@inject IJSRuntime JSRuntime
+@inject IJSRuntime JS
+
+@using Microsoft.AspNetCore.Components
+@using System.Threading.Tasks
+
+<h1>Custom Token Information</h1>
+<form id="tokenInfoForm">
+    <label for="tokenCodemin">Token Code:</label>
+    <input type="text" id="tokenCodemin" @bind="@TokenCode" required><br><br>
+    <label for="issuerAccountmin">Issuer Account Public Key:</label>
+    <input type="text" id="issuerAccountmin" @bind="@IssuerAccount" required><br><br>
+    <button type="button" @onclick="GetTokenInformation">Get Token Information</button>
+</form>
+<div id="tokenInfo">@TokenInfo</div>
+<div id="messageS">@Message</div>
+
+@code {
+    private string TokenCode { get; set; }
+    private string IssuerAccount { get; set; }
+    private string TokenInfo { get; set; }
+    private string Message { get; set; }
+
+    private async Task GetTokenInformation()
+    {
+        // JavaScript function to fetch token information
+        await JSRuntime.InvokeVoidAsync("getTokenInformation", TokenCode, IssuerAccount);
+    }
+}
+
+@{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.3.0/stellar-sdk.min.js"></script>
+    <script src="your-file-path/js/customTokenInfo.js"></script>
+}

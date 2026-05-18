@@ -1,0 +1,46 @@
+﻿@* The Pin File Component takes in a file, pins it to ipfs via pinata and attaches the files hash to the memo of a transaction on Stellar.*@
+
+
+@page "/Pin"
+@inject IJSRuntime JSRuntime
+
+<h1>Pin File to IPFS and Send Payment</h1>
+<label for="fileInput">Choose a file:</label>
+<input type="file" id="fileInput" accept=".txt,.pdf,.jpg,.png">
+<br>
+<label for="apiKeyInput">Enter your Pinata API key:</label>
+<input type="text" id="apiKeyInput">
+<br>
+<label for="senderPublicKeyInput">Sender Public Key:</label>
+<input type="text" id="senderPublicKeyInput">
+<br>
+<label for="senderSecretKeyInput">Sender Secret Key:</label>
+<input type="password" id="senderSecretKeyInput">
+<br>
+<label for="destinationPublicKeyInput">Recipient Public Key:</label>
+<input type="text" id="destinationPublicKeyInput">
+<br>
+<label for="paymentAmountInput">Payment Amount (XLM):</label>
+<input type="number" id="paymentAmountInput" step="0.01">
+<br>
+<button onclick="pinFile()">Pin File to IPFS and Send Payment</button>
+<p>IPFS Hash: <span id="ipfsHash"></span></p>
+
+@code {
+    private string file;
+    private string apiKey;
+    private string senderPublicKey;
+    private string senderSecretKey;
+    private string destinationPublicKey;
+    private string paymentAmount;
+    private string ipfsHash;
+
+    private async Task PinFile()
+    {
+        await JSRuntime.InvokeVoidAsync("pinFile");
+    }
+}
+    
+<script src="your-file-path/js/docIpfsTx.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/stellar-sdk"></script>
+<script src="https://unpkg.com/ipfs-http-client/dist/index.min.js"></script>

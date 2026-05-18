@@ -1,0 +1,45 @@
+﻿@* The Update Thresholds Component updates the low, medium and high thresholds on a Stellar account.*@
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Thresholds</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-sdk/11.3.0/stellar-sdk.min.js"></script>
+</head>
+<body>
+    <h1>Update Thresholds</h1>
+
+    <label for="accountInput">Account Public Key:</label>
+    <input type="text" id="accountInput" placeholder="Enter account public key">
+    <br>
+    <br>
+
+    <label for="lowThresholdInput">Low Threshold:</label>
+    <input type="number" id="lowThresholdInput" min="0" max="255" placeholder="Enter low threshold">
+    <br>
+    <br>
+
+    <label for="medThresholdInput">Medium Threshold:</label>
+    <input type="number" id="medThresholdInput" min="0" max="255" placeholder="Enter medium threshold">
+    <br>
+    <br>
+
+    <label for="highThresholdInput">High Threshold:</label>
+    <input type="number" id="highThresholdInput" min="0" max="255" placeholder="Enter high threshold">
+    <br>
+    <br>
+
+    <label for="secretKeyInput">Account Secret Key:</label>
+    <input type="password" id="secretKeyInput" placeholder="Enter account secret key">
+    <br>
+    <br>
+
+    <button onclick="updateThresholds()">Update Thresholds</button>
+
+    <p id="resultMessage"></p>
+
+</body>
+
+

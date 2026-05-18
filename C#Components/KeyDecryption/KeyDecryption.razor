@@ -1,0 +1,28 @@
+﻿@* The Secret Key Decryption function decrypts a secret key.*@
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Key Decryption</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sjcl/1.0.8/sjcl.js"></script>
+</head>
+<body>
+    <h1>Secret Key Decryption</h1>
+
+    <form id="decryptionForm">
+        <label for="encryptedSecretKey">Encrypted Secret Key:</label>
+        <textarea id="encryptedSecretKey" rows="5" cols="50" required></textarea><br><br>
+
+        <label for="salt">Encryption Salt:</label>
+        <input type="text" id="salt" required><br><br>
+
+        <button type="submit">Decrypt Secret Key</button>
+    </form>
+
+    <div id="decryptedSecretKey"></div>
+
+    <button id="copyButton" style="display: none;">Copy Decrypted Secret Key</button>
+
+</body>
